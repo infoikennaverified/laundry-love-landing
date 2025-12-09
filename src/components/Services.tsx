@@ -1,0 +1,95 @@
+import { Shirt, Sparkles, Wind, SprayCan, Timer, Leaf } from "lucide-react";
+
+const Services = () => {
+  const services = [
+    {
+      icon: Shirt,
+      title: "Wash & Fold",
+      description: "Fresh, clean clothes washed and folded with care. Perfect for everyday laundry needs.",
+      price: "From $1.99/lb",
+    },
+    {
+      icon: Sparkles,
+      title: "Dry Cleaning",
+      description: "Professional dry cleaning for delicate fabrics, suits, dresses, and formal wear.",
+      price: "From $5.99/item",
+    },
+    {
+      icon: Wind,
+      title: "Press & Iron",
+      description: "Crisp, wrinkle-free garments ready to wear. Perfect for professional attire.",
+      price: "From $2.99/item",
+    },
+    {
+      icon: SprayCan,
+      title: "Stain Removal",
+      description: "Expert stain treatment for tough stains. We tackle the impossible.",
+      price: "From $3.99/item",
+    },
+    {
+      icon: Timer,
+      title: "Express Service",
+      description: "Need it fast? Same-day turnaround for urgent laundry needs.",
+      price: "+50% rush fee",
+    },
+    {
+      icon: Leaf,
+      title: "Eco Wash",
+      description: "Environmentally friendly cleaning with biodegradable detergents.",
+      price: "From $2.49/lb",
+    },
+  ];
+
+  return (
+    <section id="services" className="py-20 md:py-32 bg-background">
+      <div className="container mx-auto px-4">
+        {/* Header */}
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <span className="inline-block px-4 py-2 rounded-full bg-accent text-accent-foreground text-sm font-medium mb-4">
+            Our Services
+          </span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+            Premium Care for Your <span className="text-gradient">Clothes</span>
+          </h2>
+          <p className="text-lg text-muted-foreground">
+            From everyday laundry to specialty cleaning, we handle it all with professional expertise.
+          </p>
+        </div>
+
+        {/* Services Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          {services.map((service, index) => (
+            <div
+              key={index}
+              className="group relative p-6 md:p-8 rounded-2xl bg-card border border-border hover:border-primary/30 transition-all duration-300 hover:shadow-card-hover hover:-translate-y-1"
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              {/* Icon */}
+              <div className="w-14 h-14 rounded-xl gradient-primary flex items-center justify-center mb-6 group-hover:shadow-glow transition-shadow duration-300">
+                <service.icon className="w-7 h-7 text-primary-foreground" />
+              </div>
+
+              {/* Content */}
+              <h3 className="text-xl font-semibold text-foreground mb-3">
+                {service.title}
+              </h3>
+              <p className="text-muted-foreground mb-4">
+                {service.description}
+              </p>
+
+              {/* Price */}
+              <p className="text-primary font-semibold">
+                {service.price}
+              </p>
+
+              {/* Hover Effect */}
+              <div className="absolute inset-0 rounded-2xl bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Services;
