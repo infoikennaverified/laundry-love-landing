@@ -31,7 +31,7 @@ const Footer = () => {
     { icon: Facebook, href: "#", label: "Facebook" },
     { icon: Twitter, href: "#", label: "Twitter" },
     { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
+    { icon: Linkedin, href: "https://www.linkedin.com/company/jellie-laundrymart/", label: "LinkedIn" },
   ];
 
   return (
@@ -50,7 +50,7 @@ const Footer = () => {
               Ready to Say Goodbye to Laundry Day?
             </h2>
             <p className="text-background/70 text-lg mb-8 max-w-xl mx-auto">
-              Join thousands of happy customers who have reclaimed their weekends.
+              Join thousands of happy customers and take control of your weekends.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="hero" size="xl" className="group">
@@ -91,13 +91,13 @@ const Footer = () => {
                 <div className="w-9 h-9 rounded-lg bg-background/10 flex items-center justify-center group-hover:bg-primary transition-colors">
                   <Mail className="w-4 h-4" />
                 </div>
-                hello@jellielaundrymart.com
+                jellielaundrymart@gmail.com
               </a>
               <a href="tel:+2348145028547" className="flex items-center gap-3 text-background/60 hover:text-background transition-colors text-sm group">
                 <div className="w-9 h-9 rounded-lg bg-background/10 flex items-center justify-center group-hover:bg-primary transition-colors">
                   <Phone className="w-4 h-4" />
                 </div>
-                1-800-123-4567
+                +2348145028547
               </a>
               <p className="flex items-center gap-3 text-background/60 text-sm">
                 <div className="w-9 h-9 rounded-lg bg-background/10 flex items-center justify-center">
