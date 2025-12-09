@@ -83,17 +83,17 @@ const Footer = () => {
               </div>
             </a>
             <p className="text-background/60 mb-6 max-w-sm text-sm leading-relaxed">
-              Professional laundry and dry cleaning services with free pickup and delivery. 
-              Making laundry day effortless since 2020.
+              Professional laundry and dry cleaning services with free pickup and delivery of your first two orders. 
+              Making laundry day effortless on a budget since 2020.
             </p>
             <div className="space-y-3">
-              <a href="mailto:hello@jellielaundrymart.com" className="flex items-center gap-3 text-background/60 hover:text-background transition-colors text-sm group">
+              <a href="mailto:jellielaundrymart@gmail.com" className="flex items-center gap-3 text-background/60 hover:text-background transition-colors text-sm group">
                 <div className="w-9 h-9 rounded-lg bg-background/10 flex items-center justify-center group-hover:bg-primary transition-colors">
                   <Mail className="w-4 h-4" />
                 </div>
                 hello@jellielaundrymart.com
               </a>
-              <a href="tel:+18001234567" className="flex items-center gap-3 text-background/60 hover:text-background transition-colors text-sm group">
+              <a href="tel:+2348145028547" className="flex items-center gap-3 text-background/60 hover:text-background transition-colors text-sm group">
                 <div className="w-9 h-9 rounded-lg bg-background/10 flex items-center justify-center group-hover:bg-primary transition-colors">
                   <Phone className="w-4 h-4" />
                 </div>
@@ -103,7 +103,7 @@ const Footer = () => {
                 <div className="w-9 h-9 rounded-lg bg-background/10 flex items-center justify-center">
                   <MapPin className="w-4 h-4" />
                 </div>
-                San Francisco, CA
+                Rayfield Jos, Plateau State, Nigeria.
               </p>
             </div>
           </div>
