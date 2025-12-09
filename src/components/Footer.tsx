@@ -1,5 +1,6 @@
-import { Sparkles, Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import jellieLogo from "@/assets/jellie-logo.png";
 
 const Footer = () => {
   const footerLinks = {
@@ -67,11 +68,9 @@ const Footer = () => {
           {/* Brand */}
           <div className="lg:col-span-2">
             <a href="#" className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-xl gradient-primary flex items-center justify-center">
-                <Sparkles className="w-5 h-5 text-primary-foreground" />
-              </div>
+              <img src={jellieLogo} alt="Jellie LaundryMART Logo" className="w-10 h-10 object-contain" />
               <span className="text-xl font-bold">
-                Laundry<span className="text-primary">Mart</span>
+                Jellie <span className="text-primary">LaundryMART</span>
               </span>
             </a>
             <p className="text-background/70 mb-6 max-w-sm">
@@ -79,9 +78,9 @@ const Footer = () => {
               Making laundry day effortless since 2020.
             </p>
             <div className="space-y-3">
-              <a href="mailto:hello@laundrymart.com" className="flex items-center gap-3 text-background/70 hover:text-background transition-colors">
+              <a href="mailto:hello@jellielaundrymart.com" className="flex items-center gap-3 text-background/70 hover:text-background transition-colors">
                 <Mail className="w-5 h-5" />
-                hello@laundrymart.com
+                hello@jellielaundrymart.com
               </a>
               <a href="tel:+18001234567" className="flex items-center gap-3 text-background/70 hover:text-background transition-colors">
                 <Phone className="w-5 h-5" />
@@ -140,7 +139,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="mt-16 pt-8 border-t border-background/10 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-background/50 text-sm">
-            © 2024 LaundryMart. All rights reserved.
+            © 2024 Jellie LaundryMART. All rights reserved.
           </p>
           
           {/* Social Links */}

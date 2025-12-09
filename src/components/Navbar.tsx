@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Sparkles } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import jellieLogo from "@/assets/jellie-logo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,11 +20,9 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2">
-            <div className="w-10 h-10 rounded-xl gradient-primary flex items-center justify-center">
-              <Sparkles className="w-5 h-5 text-primary-foreground" />
-            </div>
+            <img src={jellieLogo} alt="Jellie LaundryMART Logo" className="w-10 h-10 object-contain" />
             <span className="text-xl font-bold text-foreground">
-              Laundry<span className="text-gradient">Mart</span>
+              Jellie <span className="text-gradient">LaundryMART</span>
             </span>
           </a>
 
