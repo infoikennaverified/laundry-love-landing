@@ -4,7 +4,7 @@ import { ArrowRight, Clock, Truck, Shield, Sparkles } from "lucide-react";
 const Hero = () => {
   const features = [
     { icon: Clock, text: "24hr Turnaround" },
-    { icon: Truck, text: "Free Pickup & Delivery" },
+    { icon: Truck, text: "Free Pickup & Delivery on yout first two services" },
     { icon: Shield, text: "100% Satisfaction Guaranteed" },
   ];
 
@@ -26,7 +26,7 @@ const Hero = () => {
               style={{ animationDelay: "0.1s" }}
             >
               <Sparkles className="w-4 h-4" />
-              <span>Trusted by 10,000+ happy customers</span>
+              <span>Trusted by over 1000+ happy customers</span>
             </div>
 
             {/* Headline */}
@@ -35,7 +35,7 @@ const Hero = () => {
               style={{ animationDelay: "0.2s" }}
             >
               Fresh Laundry,{" "}
-              <span className="text-gradient">Delivered</span> to Your Door
+              <span className="text-gradient">Delivered</span> to Your Door on a Budget
             </h1>
 
             {/* Subheadline */}
@@ -43,7 +43,7 @@ const Hero = () => {
               className="text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed animate-fade-in"
               style={{ animationDelay: "0.3s" }}
             >
-              Professional laundry and dry cleaning services with free pickup and delivery. 
+              Professional laundry and dry cleaning services with free pickup and delivery on your first two services. 
               Spend your time on what matters most.
             </p>
 
@@ -99,8 +99,8 @@ const Hero = () => {
                     <Truck className="w-5 h-5 text-primary-foreground" />
                   </div>
                   <div>
-                    <p className="font-semibold text-foreground text-sm">Free Delivery</p>
-                    <p className="text-xs text-muted-foreground">Same day service</p>
+                    <p className="font-semibold text-foreground text-sm">Free Delivery on your first two services</p>
+                    <p className="text-xs text-muted-foreground">Same day service assured</p>
                   </div>
                 </div>
               </div>
@@ -109,7 +109,7 @@ const Hero = () => {
               <div className="absolute -top-2 -right-2 md:-top-4 md:-right-4 glass-card rounded-2xl p-4 shadow-card-hover animate-float-delayed">
                 <div className="text-center">
                   <p className="text-2xl md:text-3xl font-bold text-gradient mb-0.5">98%</p>
-                  <p className="text-xs text-muted-foreground font-medium">Satisfaction Rate</p>
+                  <p className="text-xs text-muted-foreground font-medium">Satisfaction Rate to Service</p>
                 </div>
               </div>
             </div>
