@@ -1,4 +1,4 @@
-import { Shirt, Sparkles, Wind, SprayCan, Timer, Leaf } from "lucide-react";
+import { Shirt, Sparkles, Wind, SprayCan, Timer, Leaf, ArrowRight } from "lucide-react";
 
 const Services = () => {
   const services = [
@@ -41,49 +41,48 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-20 md:py-32 bg-background">
-      <div className="container mx-auto px-4">
+    <section id="services" className="py-20 md:py-28 bg-background relative">
+      <div className="container mx-auto px-4 lg:px-8">
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="inline-block px-4 py-2 rounded-full bg-accent text-accent-foreground text-sm font-medium mb-4">
+        <div className="text-center max-w-2xl mx-auto mb-14 md:mb-16">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-accent text-accent-foreground text-sm font-semibold mb-5 tracking-wide">
             Our Services
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-5 text-balance">
             Premium Care for Your <span className="text-gradient">Clothes</span>
           </h2>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-lg text-muted-foreground leading-relaxed">
             From everyday laundry to specialty cleaning, we handle it all with professional expertise.
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
           {services.map((service, index) => (
             <div
               key={index}
-              className="group relative p-6 md:p-8 rounded-2xl bg-card border border-border hover:border-primary/30 transition-all duration-300 hover:shadow-card-hover hover:-translate-y-1"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className="group relative p-6 md:p-7 rounded-2xl bg-card border border-border hover:border-primary/20 transition-all duration-300 hover:shadow-card-hover hover:-translate-y-1"
             >
               {/* Icon */}
-              <div className="w-14 h-14 rounded-xl gradient-primary flex items-center justify-center mb-6 group-hover:shadow-glow transition-shadow duration-300">
-                <service.icon className="w-7 h-7 text-primary-foreground" />
+              <div className="w-12 h-12 rounded-xl gradient-primary flex items-center justify-center mb-5 group-hover:shadow-glow transition-all duration-300">
+                <service.icon className="w-6 h-6 text-primary-foreground" />
               </div>
 
               {/* Content */}
-              <h3 className="text-xl font-semibold text-foreground mb-3">
+              <h3 className="text-lg font-semibold text-foreground mb-2.5 group-hover:text-primary transition-colors">
                 {service.title}
               </h3>
-              <p className="text-muted-foreground mb-4">
+              <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                 {service.description}
               </p>
 
-              {/* Price */}
-              <p className="text-primary font-semibold">
-                {service.price}
-              </p>
-
-              {/* Hover Effect */}
-              <div className="absolute inset-0 rounded-2xl bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+              {/* Price & Link */}
+              <div className="flex items-center justify-between">
+                <p className="text-primary font-semibold text-sm">
+                  {service.price}
+                </p>
+                <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all duration-300" />
+              </div>
             </div>
           ))}
         </div>
