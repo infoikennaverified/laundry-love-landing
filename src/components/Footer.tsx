@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import jellieLogo from "@/assets/jellie-logo.png";
 
@@ -28,27 +28,34 @@ const Footer = () => {
   };
 
   const socialLinks = [
-    { icon: Facebook, href: "#" },
-    { icon: Twitter, href: "#" },
-    { icon: Instagram, href: "#" },
-    { icon: Linkedin, href: "#" },
+    { icon: Facebook, href: "#", label: "Facebook" },
+    { icon: Twitter, href: "#", label: "Twitter" },
+    { icon: Instagram, href: "#", label: "Instagram" },
+    { icon: Linkedin, href: "#", label: "LinkedIn" },
   ];
 
   return (
-    <footer id="contact" className="bg-foreground text-background">
+    <footer id="contact" className="bg-foreground text-background relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-primary/20 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-80 h-80 bg-primary/10 rounded-full blur-3xl" />
+      </div>
+
       {/* CTA Section */}
-      <div className="border-b border-background/10">
-        <div className="container mx-auto px-4 py-16">
+      <div className="relative border-b border-background/10">
+        <div className="container mx-auto px-4 lg:px-8 py-16 md:py-20">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-5 text-balance">
               Ready to Say Goodbye to Laundry Day?
             </h2>
-            <p className="text-background/70 mb-8">
+            <p className="text-background/70 text-lg mb-8 max-w-xl mx-auto">
               Join thousands of happy customers who have reclaimed their weekends.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="hero" size="xl">
+              <Button variant="hero" size="xl" className="group">
                 Schedule Your First Pickup
+                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
               </Button>
               <Button 
                 variant="outline" 
@@ -63,31 +70,39 @@ const Footer = () => {
       </div>
 
       {/* Main Footer */}
-      <div className="container mx-auto px-4 py-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12">
+      <div className="relative container mx-auto px-4 lg:px-8 py-14 md:py-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-12">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <a href="#" className="flex items-center gap-2 mb-4">
+            <a href="#" className="flex items-center gap-3 mb-5 group">
               <img src={jellieLogo} alt="Jellie LaundryMART Logo" className="w-10 h-10 object-contain" />
-              <span className="text-xl font-bold">
-                Jellie <span className="text-primary">LaundryMART</span>
-              </span>
+              <div className="flex flex-col">
+                <span className="text-lg font-bold leading-tight">
+                  Jellie <span className="text-primary">LaundryMART</span>
+                </span>
+              </div>
             </a>
-            <p className="text-background/70 mb-6 max-w-sm">
+            <p className="text-background/60 mb-6 max-w-sm text-sm leading-relaxed">
               Professional laundry and dry cleaning services with free pickup and delivery. 
               Making laundry day effortless since 2020.
             </p>
             <div className="space-y-3">
-              <a href="mailto:hello@jellielaundrymart.com" className="flex items-center gap-3 text-background/70 hover:text-background transition-colors">
-                <Mail className="w-5 h-5" />
+              <a href="mailto:hello@jellielaundrymart.com" className="flex items-center gap-3 text-background/60 hover:text-background transition-colors text-sm group">
+                <div className="w-9 h-9 rounded-lg bg-background/10 flex items-center justify-center group-hover:bg-primary transition-colors">
+                  <Mail className="w-4 h-4" />
+                </div>
                 hello@jellielaundrymart.com
               </a>
-              <a href="tel:+18001234567" className="flex items-center gap-3 text-background/70 hover:text-background transition-colors">
-                <Phone className="w-5 h-5" />
+              <a href="tel:+18001234567" className="flex items-center gap-3 text-background/60 hover:text-background transition-colors text-sm group">
+                <div className="w-9 h-9 rounded-lg bg-background/10 flex items-center justify-center group-hover:bg-primary transition-colors">
+                  <Phone className="w-4 h-4" />
+                </div>
                 1-800-123-4567
               </a>
-              <p className="flex items-center gap-3 text-background/70">
-                <MapPin className="w-5 h-5" />
+              <p className="flex items-center gap-3 text-background/60 text-sm">
+                <div className="w-9 h-9 rounded-lg bg-background/10 flex items-center justify-center">
+                  <MapPin className="w-4 h-4" />
+                </div>
                 San Francisco, CA
               </p>
             </div>
@@ -95,11 +110,11 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h4 className="font-semibold mb-4">Services</h4>
+            <h4 className="font-semibold mb-5 text-sm tracking-wide">Services</h4>
             <ul className="space-y-3">
               {footerLinks.services.map((link) => (
                 <li key={link.name}>
-                  <a href={link.href} className="text-background/70 hover:text-background transition-colors">
+                  <a href={link.href} className="text-background/60 hover:text-background transition-colors text-sm">
                     {link.name}
                   </a>
                 </li>
@@ -109,11 +124,11 @@ const Footer = () => {
 
           {/* Company */}
           <div>
-            <h4 className="font-semibold mb-4">Company</h4>
+            <h4 className="font-semibold mb-5 text-sm tracking-wide">Company</h4>
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
-                  <a href={link.href} className="text-background/70 hover:text-background transition-colors">
+                  <a href={link.href} className="text-background/60 hover:text-background transition-colors text-sm">
                     {link.name}
                   </a>
                 </li>
@@ -123,11 +138,11 @@ const Footer = () => {
 
           {/* Support */}
           <div>
-            <h4 className="font-semibold mb-4">Support</h4>
+            <h4 className="font-semibold mb-5 text-sm tracking-wide">Support</h4>
             <ul className="space-y-3">
               {footerLinks.support.map((link) => (
                 <li key={link.name}>
-                  <a href={link.href} className="text-background/70 hover:text-background transition-colors">
+                  <a href={link.href} className="text-background/60 hover:text-background transition-colors text-sm">
                     {link.name}
                   </a>
                 </li>
@@ -137,30 +152,31 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-16 pt-8 border-t border-background/10 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-background/50 text-sm">
+        <div className="mt-14 pt-8 border-t border-background/10 flex flex-col md:flex-row justify-between items-center gap-6">
+          <p className="text-background/40 text-sm">
             © 2024 Jellie LaundryMART. All rights reserved.
           </p>
           
           {/* Social Links */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2">
             {socialLinks.map((social, index) => (
               <a
                 key={index}
                 href={social.href}
-                className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
+                aria-label={social.label}
+                className="w-10 h-10 rounded-xl bg-background/10 flex items-center justify-center hover:bg-primary transition-colors group"
               >
-                <social.icon className="w-5 h-5" />
+                <social.icon className="w-4 h-4 text-background/70 group-hover:text-primary-foreground transition-colors" />
               </a>
             ))}
           </div>
 
           {/* Legal Links */}
           <div className="flex items-center gap-6 text-sm">
-            <a href="#" className="text-background/50 hover:text-background transition-colors">
+            <a href="#" className="text-background/40 hover:text-background transition-colors">
               Privacy Policy
             </a>
-            <a href="#" className="text-background/50 hover:text-background transition-colors">
+            <a href="#" className="text-background/40 hover:text-background transition-colors">
               Terms of Service
             </a>
           </div>
