@@ -3,10 +3,10 @@ import { Star, Quote } from "lucide-react";
 const Testimonials = () => {
   const testimonials = [
     {
-      name: "Sarah Mitchell",
-      role: "Working Mom",
+      name: "Eleazar Gideon",
+      role: "NYSC Corper",
       image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&auto=format&fit=crop",
-      content: "Jellie LaundryMART has been a lifesaver! With three kids, I never have time for laundry. Now it just magically appears clean and folded at my door.",
+      content: "Jellie LaundryMART has been a lifesaver! With handling a full-time career and National Youth Service, I never have time for laundry. Now it just magically appears clean and folded at my door.",
       rating: 5,
     },
     {

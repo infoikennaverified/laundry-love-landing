@@ -6,25 +6,25 @@ const Services = () => {
       icon: Shirt,
       title: "Wash & Fold",
       description: "Fresh, clean clothes washed and folded with care. Perfect for everyday laundry needs.",
-      price: "From $1.99/lb",
+      price: "From NGN5000 with delivery/15items",
     },
     {
       icon: Sparkles,
       title: "Dry Cleaning",
       description: "Professional dry cleaning for delicate fabrics, suits, dresses, and formal wear.",
-      price: "From $5.99/item",
+      price: "From NGN2000 without delivery/item",
     },
     {
       icon: Wind,
       title: "Press & Iron",
       description: "Crisp, wrinkle-free garments ready to wear. Perfect for professional attire.",
-      price: "From $2.99/item",
+      price: "From NGN3000 without delivery/item",
     },
     {
       icon: SprayCan,
       title: "Stain Removal",
       description: "Expert stain treatment for tough stains. We tackle the impossible.",
-      price: "From $3.99/item",
+      price: "From From NGN2000 without delivery/item",
     },
     {
       icon: Timer,
@@ -36,7 +36,7 @@ const Services = () => {
       icon: Leaf,
       title: "Eco Wash",
       description: "Environmentally friendly cleaning with biodegradable detergents.",
-      price: "From $2.49/lb",
+      price: "From NGN3000 without delivery/item",
     },
   ];
 

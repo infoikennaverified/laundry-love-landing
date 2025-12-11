@@ -6,7 +6,7 @@ const HowItWorks = () => {
       icon: Calendar,
       number: "01",
       title: "Schedule Pickup",
-      description: "Book online in seconds. Choose a time that works for you, any day of the week.",
+      description: "Book online in seconds. Choose a time that works for you, any day of the week. And payment is easy and secure.",
     },
     {
       icon: Package,
