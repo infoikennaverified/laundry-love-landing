@@ -80,8 +80,8 @@ const Navbar = () => {
 
           {/* CTA Button */}
           <div className="hidden lg:block">
-            <Button variant="hero" size="lg">
-              Schedule Pickup
+            <Button variant="hero" size="lg" asChild>
+              <a href={isHomePage ? "#booking" : "/#booking"}>Schedule Pickup</a>
             </Button>
           </div>
 
@@ -126,8 +126,8 @@ const Navbar = () => {
               )
             ))}
             <div className="pt-3 px-4">
-              <Button variant="hero" size="lg" className="w-full">
-                Schedule Pickup
+              <Button variant="hero" size="lg" className="w-full" asChild>
+                <a href={isHomePage ? "#booking" : "/#booking"} onClick={() => setIsOpen(false)}>Schedule Pickup</a>
               </Button>
             </div>
           </div>
