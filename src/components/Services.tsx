@@ -1,4 +1,5 @@
 import { Shirt, Sparkles, Wind, SprayCan, Timer, Leaf, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Services = () => {
   const services = [
@@ -51,9 +52,15 @@ const Services = () => {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-5 text-balance">
             Premium Care for Your <span className="text-gradient">Clothes</span>
           </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed">
+          <p className="text-lg text-muted-foreground leading-relaxed mb-6">
             From everyday laundry to specialty cleaning, we handle it all with professional expertise.
           </p>
+          <Link 
+            to="/services" 
+            className="inline-flex items-center gap-2 text-primary font-semibold hover:underline"
+          >
+            View All Services <ArrowRight className="w-4 h-4" />
+          </Link>
         </div>
 
         {/* Services Grid */}

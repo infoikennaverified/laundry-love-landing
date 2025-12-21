@@ -1,11 +1,14 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 import jellieLogo from "@/assets/jellie-logo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,11 +19,11 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: "Services", href: "#services" },
-    { name: "How It Works", href: "#how-it-works" },
-    { name: "Pricing", href: "#pricing" },
-    { name: "Testimonials", href: "#testimonials" },
-    { name: "Contact", href: "#contact" },
+    { name: "Services", href: isHomePage ? "#services" : "/services", isRoute: !isHomePage },
+    { name: "How It Works", href: isHomePage ? "#how-it-works" : "/#how-it-works" },
+    { name: "Pricing", href: isHomePage ? "#pricing" : "/#pricing" },
+    { name: "Testimonials", href: isHomePage ? "#testimonials" : "/#testimonials" },
+    { name: "Contact", href: isHomePage ? "#contact" : "/#contact" },
   ];
 
   return (
@@ -32,7 +35,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-18 md:h-20">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-3 group">
+          <Link to="/" className="flex items-center gap-3 group">
             <div className="relative">
               <img 
                 src={jellieLogo} 
@@ -48,19 +51,30 @@ const Navbar = () => {
                 Professional Laundry Services
               </span>
             </div>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="relative px-4 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors font-medium group"
-              >
-                {link.name}
-                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-primary rounded-full transition-all duration-300 group-hover:w-3/4" />
-              </a>
+              link.isRoute ? (
+                <Link
+                  key={link.name}
+                  to={link.href}
+                  className="relative px-4 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors font-medium group"
+                >
+                  {link.name}
+                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-primary rounded-full transition-all duration-300 group-hover:w-3/4" />
+                </Link>
+              ) : (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className="relative px-4 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors font-medium group"
+                >
+                  {link.name}
+                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-primary rounded-full transition-all duration-300 group-hover:w-3/4" />
+                </a>
+              )
             ))}
           </div>
 
@@ -91,14 +105,25 @@ const Navbar = () => {
         }`}>
           <div className="py-4 space-y-1 border-t border-border/50">
             {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="block px-4 py-3 text-muted-foreground hover:text-foreground hover:bg-accent/50 rounded-xl transition-colors font-medium"
-                onClick={() => setIsOpen(false)}
-              >
-                {link.name}
-              </a>
+              link.isRoute ? (
+                <Link
+                  key={link.name}
+                  to={link.href}
+                  className="block px-4 py-3 text-muted-foreground hover:text-foreground hover:bg-accent/50 rounded-xl transition-colors font-medium"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {link.name}
+                </Link>
+              ) : (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className="block px-4 py-3 text-muted-foreground hover:text-foreground hover:bg-accent/50 rounded-xl transition-colors font-medium"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {link.name}
+                </a>
+              )
             ))}
             <div className="pt-3 px-4">
               <Button variant="hero" size="lg" className="w-full">
